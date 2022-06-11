@@ -1,6 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const app = express()
+const PORT = 8000;
 
 app.set(cors())
 
@@ -49,6 +50,6 @@ app.get('/api/houses/:name', (req, res) => {
     }
 })
 
-app.listen(8000, () => {
+app.listen(process.env.PORT || PORT, () => {
     console.log('server is running on port 8000')
 })
